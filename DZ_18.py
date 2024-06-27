@@ -59,13 +59,12 @@ class Car:
         if new_price in int:
             self.__price = new_price
 
-    
     def __str__(self):
         return f'Модель: {self.model}, год выпуска: {self.year}, производитель: {self.maker}, объем двигателя: {self.engine_volume}, цвет: {self.colour}, цена: {self.price}'
 
 
 my_car = Car('Step-way', 2017, 'Renaut', 80, 'blue', 700_000)
-my_car.show_car()
+print(my_car.__str__())
 
 # Задание 2
 class Book:
@@ -76,9 +75,6 @@ class Book:
         self.__style = style
         self.__author = author
         self.__price = price
-
-    def show_book(self):
-        print(self.__dict__)
 
     @property
     def name(self):
@@ -130,9 +126,12 @@ class Book:
         if new_price in int:
             self.__price = new_price
 
+    def __str__(self):
+        return f'Название: {self.name}, год выпуска: {self.year}, издатель: {self.publish}, жанр: {self.style}, автор: {self.author}, цена: {self.price}'
+
 
 my_book = Book('Dune', 2022, 'Neoclassic', 'science fiction novel', 'Frank Herbert', 1_250)
-my_book.show_book()
+print(my_book.__str__())
 
 # Задание 3
 class Stadium:
@@ -142,9 +141,6 @@ class Stadium:
         self.__country = country
         self.__city = city
         self.__capacity = capacity
-
-    def show_stadium(self):
-        print(self.__dict__)
 
     @property
     def name(self):
@@ -187,6 +183,9 @@ class Stadium:
         if new_capacity in int:
             self.__capacity = new_capacity
 
+    def __str__(self):
+        return f'Название стадиона: {self.name}, дата открытия: {self.date_open}, страна: {self.country}, город: {self.city}, вместимость: {self.capacity}'
+
 
 my_stadium = Stadium('Dinamo', '06.05.1934', 'Russia', 'Ufa', 5_000)
-my_stadium.show_stadium()
+print(my_stadium.__str__())
