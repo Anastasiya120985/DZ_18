@@ -8,9 +8,6 @@ class Car:
         self.__colour = colour
         self.__price = price
 
-    def show_car(self):
-        print(self.__dict__)
-
     @property
     def model(self):
         return self.__model
@@ -61,6 +58,10 @@ class Car:
     def price(self, new_price):
         if new_price in int:
             self.__price = new_price
+
+    
+    def __str__(self):
+        return f'Модель: {self.model}, год выпуска: {self.year}, производитель: {self.maker}, объем двигателя: {self.engine_volume}, цвет: {self.colour}, цена: {self.price}'
 
 
 my_car = Car('Step-way', 2017, 'Renaut', 80, 'blue', 700_000)
